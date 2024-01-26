@@ -12,7 +12,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_ARN }}
-          role-session-name: ${{ env.ROLE }}
-          aws-region: ${{ env.REGION }}
+          role-session-name: ${{ vars.ROLE }}
+          aws-region: ${{ vars.REGION }}
       - run: sam build --use-container
-      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --resolve-s3 --capabilities CAPABILITY_IAM --region ${{ env.REGION }}
+      - run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --stack-name sam-hello-world --resolve-s3 --capabilities CAPABILITY_IAM --region ${{ vars.REGION }}
