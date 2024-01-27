@@ -38,7 +38,7 @@ Resources:
         Another:
           Type: Api
           Properties:
-            Path: /hello
+            Path: /another
             Method: get
 
 Outputs:
